@@ -11,10 +11,20 @@ form.on('submit', (evt) => {
 })
 
 async function getGiphy(){
-    const res = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${input.val()}`, {params:{api_key:"MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym"}})
-    console.log(res.data.data)
-    const {url} = res.data.data[parseInt(Math.random() * 12)].images.downsized_large
-    $(`<img src=${url}/>`).appendTo(section)
-    input.val("")
-
+    try{
+        const res = await axios.get(`http://api.giphy.com/v1/gifs/random`, 
+        {
+            params:{
+                api_key:"MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym",
+                tag:input.val()
+            }
+        })
+        const url = res.data.data.images.downsized_large.url
+        $(`<img src=${url}/>`).appendTo(section)
+        input.val("")
+    }catch(e){
+       alert(`ERROR Cant't find image`) 
+       console.log(e)
+    }
+   
 }
