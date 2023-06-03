@@ -5,7 +5,7 @@ body{
 .form-input{
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
 
     /* font-size:14pt; */
 
@@ -16,11 +16,7 @@ h1{
     display: flex;
     justify-content: center;
 }
-section{
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content:left; */
-}
+
 img{
     padding: 2rem;
     max-width: 400px;
@@ -29,24 +25,31 @@ img{
 button{
     font-size: 1rem;
 }
+
 input{
     height: 2rem;
-    font-size:14pt;
+    font-size: 14pt;
     padding: 0.5rem;
+    border-radius: 15px 0 0 15px ;
+    border: solid 2px;
+
 }
 
 .btn{
     color: white;
     padding: 1rem;
+    border: black solid 1px;
 }
 
 .btn-remove{
     background-color: orangered;
+    border-radius: 0 15px 15px 0 ;
 
 }
 
 .btn-search{
     background-color:  #515677;
+    margin-left: -4px;
 }
 
 .btn:hover{
